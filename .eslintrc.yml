@@ -1,0 +1,32 @@
+env:
+  browser: true
+  commonjs: true
+  es6: true
+  jasmine: true
+  jquery: true
+extends: 'airbnb-base'
+parserOptions:
+  sourceType: module
+rules:
+  indent:
+    - error
+    - 2
+  no-tabs:
+    - 0
+  arrow-body-style:
+    - error
+    - always
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-unused-vars:
+    - warn
+    - local
+
+  key-spacing: [1, { "align": "colon" }]

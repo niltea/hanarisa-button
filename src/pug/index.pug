@@ -1,0 +1,56 @@
+//- vars
+block vars
+doctype html
+head
+    meta(name="viewport" content='width=750,user-scalable=yes')
+    meta(name="format-detection", content="telephone=no")
+    meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+html(lang='ja')
+    head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
+        title こんリサ〜
+
+        //- CSS Setting
+        link(rel='stylesheet', href="./css/style.css?v=201903-01")
+        block link
+
+    body#g(class=bodyClass)
+        script
+            | var isPC = true;
+            | (function () { if (navigator.userAgent.toLowerCase().match(/iphone|ipad|android/)) { document.body.classList.add('sp');isPC=false;return; } document.body.classList .add('pc'); })();
+        //block body
+        .header-nav
+            .button-twitter
+                a.twitter-share-button(href!="https://twitter.com/share?text=%E3%81%94%E3%81%8D%E3%81%92%E3%82%93%E3%82%88%E3%81%86&url=https%3A%2F%2Fniltea.github.io%2Fhanarisa-button%2F%3Fref%3Dtwbtn", data-show-count="false") Tweet
+
+        #wrapper
+            main.mainContent
+                h1 こんリサ〜
+                p.desc_top
+                    a(href="https://www.youtube.com/channel/UCurEA8YoqFwimJcAuSHU0MQ", target="_blank") はなリサちゃん
+                    |が喋ってくれるよ。
+                .button_wrapper
+                    // タイトルをここに
+                    .button.button-play(data-voice="xxxx-0h00m00s") だハッ！w
+                    // タイトルをここに
+                    .button.button-play(data-voice="xxxx-0h00m00s") くしゃみ
+                    // タイトルをここに
+                    .button.button-play(data-voice="xxxx-0h00m00s") おじさん
+                    // タイトルをここに
+                    .button.button-play(data-voice="xxxx-0h00m00s") かわいい笑い声
+                    // タイトルをここに
+                    .button.button-play(data-voice="xxxx-0h00m00s") ねぇねぇこっち来て……♡
+            .mainFooter
+                .credit
+                    p 音声の著作権は、全て元著作者に帰属します。
+                    p 音声以外の部分については、<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank">CC-BY-NC-SA-4.0</a>に基づき自由にご利用ください。<br>ソースコードは<a href="https://github.com/niltea/setomiya-button" target="_blank">こちら</a>。<br>お問い合わせ・追加したら面白そうなボイスがあれば
+                        a(href="https://twitter.com/niltea_vt", target="_blank") @niltea_vt
+                        |まで。
+
+    script(src='./js/app.js')
+    //<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115478883-3"></script>
+    //script
+        |window.dataLayer = window.dataLayer || [];
+        |function gtag(){dataLayer.push(arguments);}
+        |gtag('js', new Date());
+        |gtag('config', 'UA-115478883-3');
+    script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")

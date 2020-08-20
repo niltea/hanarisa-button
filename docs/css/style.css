@@ -1,0 +1,157 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}.button-twitter {
+  position: fixed;
+  left: 10px;
+  top: 10px; }
+
+#wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  line-height: 1.7em;
+  font-family: sans-serif;
+  background-color: #928c36; }
+
+.mainContent {
+  flex: 1;
+  margin: 0 auto; }
+  .mainContent a {
+    color: #000; }
+    .mainContent a:hover {
+      color: #000; }
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #000; }
+
+.desc_top {
+  text-align: center;
+  color: #000; }
+
+.button_wrapper {
+  margin: 0 auto; }
+
+.button-play {
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #4d2387;
+  border: 1px solid #4d2387;
+  background-color: #DEE5E5;
+  border-radius: 5px;
+  text-align: center; }
+  .button-play.disabled {
+    cursor: not-allowed;
+    background-color: #ddd;
+    color: #aaa;
+    border-color: #888; }
+
+.mainFooter {
+  background-color: #DEE5E5;
+  color: #000; }
+  .mainFooter a {
+    color: #000; }
+    .mainFooter a:hover {
+      color: #000; }
+
+@media screen and (min-width: 751px) {
+  .mainContent {
+    padding-top: 50px;
+    width: 90%; }
+  h1 {
+    font-size: 28px; }
+  .desc_top {
+    margin-top: 20px; }
+  .button_wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap; }
+  .button-play {
+    width: 49%;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    height: 3em;
+    line-height: 3em; }
+    .button-play:nth-child(2n) {
+      margin-left: 2%; }
+  .mainFooter {
+    margin-top: 40px;
+    padding: 40px 3% 40px; }
+    .mainFooter .credit {
+      font-size: 13px;
+      text-align: center; } }
+
+@media screen and (min-width: 1300px) {
+  .button-play {
+    width: 32%;
+    margin-left: 2%; }
+    .button-play:nth-child(3n+1) {
+      margin-left: 0; } }
+
+@media screen and (max-width: 750px) {
+  .mainContent {
+    width: 94%;
+    padding-top: 80px; }
+  h1 {
+    font-size: 34px; }
+  .desc_top {
+    margin-top: 28px;
+    font-size: 18px; }
+  .button_wrapper {
+    margin-top: 60px; }
+  .button-play {
+    width: 100%;
+    margin-bottom: 1.2em;
+    font-size: 24px;
+    height: 4em;
+    line-height: 4em; }
+  .mainFooter {
+    margin-top: 40px;
+    padding: 40px 3% 40px; } }

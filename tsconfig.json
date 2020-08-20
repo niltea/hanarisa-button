@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "checkJs": true,
+    "target": "esnext",
+    "lib": ["dom", "es2015"]
+  },
+  "include": [
+    "src/js/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
