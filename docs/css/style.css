@@ -56,25 +56,25 @@ table {
   min-height: 100vh;
   line-height: 1.7em;
   font-family: sans-serif;
-  background-color: #928c36; }
+  background-color: #F6F4E7; }
 
 .mainContent {
   flex: 1;
   margin: 0 auto; }
   .mainContent a {
-    color: #000; }
+    color: #638013; }
     .mainContent a:hover {
-      color: #000; }
+      color: #4a5a18; }
 
 h1 {
   text-align: center;
   font-weight: 600;
   font-size: 1.6rem;
-  color: #000; }
+  color: #4a5a18; }
 
 .desc_top {
   text-align: center;
-  color: #000; }
+  color: #4a5a18; }
 
 .button_wrapper {
   margin: 0 auto; }
@@ -82,9 +82,9 @@ h1 {
 .button-play {
   box-sizing: border-box;
   cursor: pointer;
-  color: #4d2387;
-  border: 1px solid #4d2387;
-  background-color: #DEE5E5;
+  color: #413f1f;
+  border: 1px solid #413f1f;
+  background-color: #d5d9be;
   border-radius: 5px;
   text-align: center; }
   .button-play.disabled {
@@ -94,7 +94,7 @@ h1 {
     border-color: #888; }
 
 .mainFooter {
-  background-color: #DEE5E5;
+  background-color: #9CA863;
   color: #000; }
   .mainFooter a {
     color: #000; }

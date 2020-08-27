@@ -1,10 +1,12 @@
 @import url("~reset.css");
-$backGroundColor: #928c36;
-$baseColor: #DEE5E5;
-$accentColor: #4d2387;
-$headerColor: #000;
-$linkColor: #000;
-$linkHoverColor: #000;
+$backGroundColor: #F6F4E7;
+$baseColor: #9CA863;
+$accentColor: #413f1f;
+$buttonTextColor: #413f1f;
+$buttonBGColor: #d5d9be;
+$headerColor: #4a5a18;
+$linkColor: #638013;
+$linkHoverColor: #4a5a18;
 $footerTextColor: #000;
 $footerHoverColor: #000;
 .button-twitter {
@@ -46,9 +48,9 @@ h1 {
 .button-play {
 	box-sizing: border-box;
 	cursor: pointer;
-	color: $accentColor;
+	color: $buttonTextColor;
 	border: 1px solid $accentColor;
-	background-color: $baseColor;
+	background-color: $buttonBGColor;
 	border-radius: 5px;
 	text-align: center;
 	&.disabled {
