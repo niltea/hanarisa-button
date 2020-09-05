@@ -87,6 +87,10 @@ h1 {
   background-color: #d5d9be;
   border-radius: 5px;
   text-align: center; }
+  .button-play.cat-c {
+    color: #411f3f;
+    border: 1px solid #411f40;
+    background-color: #f6d7e6; }
   .button-play.disabled {
     cursor: not-allowed;
     background-color: #ddd;
