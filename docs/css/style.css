@@ -76,6 +76,9 @@ h1 {
   text-align: center;
   color: #4a5a18; }
 
+.movie_title {
+  text-align: center; }
+
 .button_wrapper {
   margin: 0 auto; }
 
@@ -106,6 +109,12 @@ h1 {
       color: #000; }
 
 @media screen and (min-width: 751px) {
+  .onlyNarrow {
+    display: none; }
+  a {
+    text-decoration: none; }
+    a:hover {
+      text-decoration: underline; }
   .mainContent {
     padding-top: 50px;
     width: 90%; }
@@ -113,8 +122,13 @@ h1 {
     font-size: 28px; }
   .desc_top {
     margin-top: 20px; }
-  .button_wrapper {
+  .movie_title {
     margin-top: 40px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px; }
+  .button_wrapper {
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap; }
   .button-play {
@@ -148,8 +162,14 @@ h1 {
   .desc_top {
     margin-top: 28px;
     font-size: 18px; }
+  .movie_title {
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.5em; }
   .button_wrapper {
-    margin-top: 60px; }
+    margin-top: 30px; }
   .button-play {
     width: 100%;
     margin-bottom: 1.2em;
