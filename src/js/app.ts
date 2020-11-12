@@ -2,11 +2,14 @@ declare function require(x: string): any;
 
 const buzz = require('buzz');
 const singleClass = 'isSingle';
+const playClass = 'isPlaying';
 
-    class Sound {
+class Sound {
   public voices;
 
   constructor(playButtons) {
+    const infoWrapper = document.getElementById('infoWrapper');
+    const fixedLink = document.getElementById('fixedLink');
     // init vars
     // this.isPlay = false;
     this.voices = {};
@@ -17,6 +20,10 @@ const singleClass = 'isSingle';
     // if (!isBuzzSupported) {
     //   throw 'buzz is not supported';
     // }
+
+    const onPlayEnd =(hoge) => {
+      document.body.classList.remove(playClass);
+    };
 
     playButtons.forEach((button) => {
       if (button.classList.contains('disabled')) {
@@ -32,7 +39,13 @@ const singleClass = 'isSingle';
         formats: ['mp3'],
         preload: true,
       });
+      this.voices[voiceID].bind('ended', onPlayEnd);
       button.addEventListener('click', (e) => {
+        const rect = button.getBoundingClientRect();
+        infoWrapper.style.top = `${rect.top + window.scrollY - rect.height }px`;
+        infoWrapper.style.left = `${rect.left}px`;
+        fixedLink.setAttribute('href', `/#${button.getAttribute('data-voice')}`);
+        document.body.classList.add(playClass);
         this.playAudio(voiceID);
       });
     });

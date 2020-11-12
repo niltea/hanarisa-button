@@ -97,6 +97,30 @@ h1 {
 		display: none;
 	}
 }
+.infoWrapper {
+	position: absolute;
+	background-color: $backGroundColor;
+	padding: 0.5em;
+	border: 1px solid $accentColor;
+	border-radius: 3px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.4s;
+	&:after {
+		content: '';
+		display: block;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 16px solid $accentColor;
+		position: absolute;
+		left: 2px;
+		bottom: -16px;
+	}
+}
+.isPlaying .infoWrapper {
+	opacity: 1;
+	pointer-events: auto;
+}
 
 @media screen and (min-width: 751px) {
 	.onlyNarrow {

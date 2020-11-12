@@ -119,6 +119,29 @@ h1 {
 .isSingle .multiButtonWrapper {
   display: none; }
 
+.infoWrapper {
+  position: absolute;
+  background-color: #F6F4E7;
+  padding: 0.5em;
+  border: 1px solid #413f1f;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s; }
+  .infoWrapper:after {
+    content: '';
+    display: block;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 16px solid #413f1f;
+    position: absolute;
+    left: 2px;
+    bottom: -16px; }
+
+.isPlaying .infoWrapper {
+  opacity: 1;
+  pointer-events: auto; }
+
 @media screen and (min-width: 751px) {
   .onlyNarrow {
     display: none; }

@@ -76,6 +76,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var buzz = __webpack_require__(1);
 var singleClass = 'isSingle';
+var playClass = 'isPlaying';
 
 var Sound = function () {
     function Sound(playButtons) {
@@ -83,7 +84,12 @@ var Sound = function () {
 
         _classCallCheck(this, Sound);
 
+        var infoWrapper = document.getElementById('infoWrapper');
+        var fixedLink = document.getElementById('fixedLink');
         this.voices = {};
+        var onPlayEnd = function onPlayEnd(hoge) {
+            document.body.classList.remove(playClass);
+        };
         playButtons.forEach(function (button) {
             if (button.classList.contains('disabled')) {
                 return;
@@ -94,7 +100,13 @@ var Sound = function () {
                 formats: ['mp3'],
                 preload: true
             });
+            _this.voices[voiceID].bind('ended', onPlayEnd);
             button.addEventListener('click', function (e) {
+                var rect = button.getBoundingClientRect();
+                infoWrapper.style.top = rect.top + window.scrollY - rect.height + 'px';
+                infoWrapper.style.left = rect.left + 'px';
+                fixedLink.setAttribute('href', '/#' + button.getAttribute('data-voice'));
+                document.body.classList.add(playClass);
                 _this.playAudio(voiceID);
             });
         });
