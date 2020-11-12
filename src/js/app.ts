@@ -44,7 +44,7 @@ class Sound {
         const rect = button.getBoundingClientRect();
         infoWrapper.style.top = `${rect.top + window.scrollY - rect.height }px`;
         infoWrapper.style.left = `${rect.left}px`;
-        fixedLink.setAttribute('href', `/#${button.getAttribute('data-voice')}`);
+        fixedLink.setAttribute('href', `${location.href}#${button.getAttribute('data-voice')}`);
         document.body.classList.add(playClass);
         this.playAudio(voiceID);
       });
