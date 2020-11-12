@@ -108,6 +108,17 @@ h1 {
     .mainFooter a:hover {
       color: #000; }
 
+.singleButtonWrapper {
+  display: none; }
+  .singleButtonWrapper .content {
+    text-align: center; }
+
+.isSingle .singleButtonWrapper {
+  display: block; }
+
+.isSingle .multiButtonWrapper {
+  display: none; }
+
 @media screen and (min-width: 751px) {
   .onlyNarrow {
     display: none; }
@@ -139,6 +150,11 @@ h1 {
     line-height: 3em; }
     .button-play:nth-child(2n) {
       margin-left: 2%; }
+    .singleButtonWrapper .button-play {
+      margin: 1.5em auto;
+      height: 4em;
+      line-height: 4em;
+      width: 80%; }
   .mainFooter {
     margin-top: 40px;
     padding: 40px 3% 40px; }
@@ -147,10 +163,10 @@ h1 {
       text-align: center; } }
 
 @media screen and (min-width: 1300px) {
-  .button-play {
+  .multiButtonWrapper .button-play {
     width: 32%;
     margin-left: 2%; }
-    .button-play:nth-child(3n+1) {
+    .multiButtonWrapper .button-play:nth-child(3n+1) {
       margin-left: 0; } }
 
 @media screen and (max-width: 750px) {

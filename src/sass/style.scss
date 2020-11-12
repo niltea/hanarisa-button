@@ -82,6 +82,22 @@ h1 {
 	}
 }
 
+//single mode
+.singleButtonWrapper {
+	display: none;
+	.content {
+		text-align: center;
+	}
+}
+.isSingle {
+	.singleButtonWrapper {
+		display: block;
+	}
+	.multiButtonWrapper {
+		display: none;
+	}
+}
+
 @media screen and (min-width: 751px) {
 	.onlyNarrow {
 		display: none;
@@ -122,6 +138,12 @@ h1 {
 		&:nth-child(2n) {
 			margin-left: 2%;
 		}
+		.singleButtonWrapper & {
+			margin: 1.5em auto;
+			height: 4em;
+			line-height: 4em;
+			width: 80%;
+		}
 	}
 	.mainFooter {
 		margin-top: 40px;
@@ -134,7 +156,7 @@ h1 {
 }
 
 @media screen and (min-width: 1300px) {
-	.button-play {
+	.multiButtonWrapper .button-play {
 		width: 32%;
 		margin-left: 2%;
 		&:nth-child(3n+1) {

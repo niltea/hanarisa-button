@@ -75,15 +75,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var buzz = __webpack_require__(1);
+var singleClass = 'isSingle';
 
 var Sound = function () {
-    function Sound() {
+    function Sound(playButtons) {
         var _this = this;
 
         _classCallCheck(this, Sound);
 
         this.voices = {};
-        var playButtons = Array.from(document.getElementsByClassName('button-play'));
         playButtons.forEach(function (button) {
             if (button.classList.contains('disabled')) {
                 return;
@@ -112,7 +112,34 @@ var Sound = function () {
 }();
 
 document.addEventListener('DOMContentLoaded', function () {
-    new Sound();
+    var playButtons = Array.from(document.getElementsByClassName('button-play'));
+    var voiceList = [];
+    playButtons.forEach(function (button) {
+        var voiceID = button.getAttribute('data-voice');
+        button.setAttribute('id', voiceID);
+        voiceList.push(voiceID);
+    });
+    new Sound(playButtons);
+    var hash = location.hash;
+    if (hash) {
+        var theID = hash.slice(1);
+        var voiceIndex = voiceList.indexOf(theID);
+        if (voiceIndex !== -1) {
+            document.body.classList.add(singleClass);
+            var voiceButton = document.getElementById(theID);
+            var copiedButton = voiceButton.cloneNode(true);
+            var singleButtonWrapper = document.getElementById('singleButtonWrapper');
+            singleButtonWrapper.appendChild(copiedButton);
+            var voicePath = './voice/' + theID;
+            var voice = new buzz.sound(voicePath, {
+                formats: ['mp3'],
+                preload: true
+            });
+            copiedButton.addEventListener('click', function (e) {
+                voice.play();
+            });
+        }
+    }
 });
 
 /***/ }),

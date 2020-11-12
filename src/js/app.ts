@@ -1,11 +1,12 @@
 declare function require(x: string): any;
 
 const buzz = require('buzz');
+const singleClass = 'isSingle';
 
-class Sound {
+    class Sound {
   public voices;
 
-  constructor() {
+  constructor(playButtons) {
     // init vars
     // this.isPlay = false;
     this.voices = {};
@@ -17,7 +18,6 @@ class Sound {
     //   throw 'buzz is not supported';
     // }
 
-    const playButtons = Array.from(document.getElementsByClassName('button-play'));
     playButtons.forEach((button) => {
       if (button.classList.contains('disabled')) {
         return;
@@ -49,5 +49,41 @@ class Sound {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Sound();
+  const playButtons = Array.from(document.getElementsByClassName('button-play'));
+  const voiceList = [];
+  playButtons.forEach((button) => {
+    const voiceID = button.getAttribute('data-voice');
+    button.setAttribute('id', voiceID);
+    voiceList.push(voiceID);
+  });
+  new Sound(playButtons);
+
+  const hash = location.hash;
+  if (hash) {
+    const theID: string = hash.slice(1);
+    const voiceIndex: number = voiceList.indexOf(theID);
+    if (voiceIndex !== -1) {
+      // ボイスが見つかったときの動作
+      document.body.classList.add(singleClass);
+      const voiceButton = document.getElementById(theID);
+
+      const copiedButton = voiceButton.cloneNode(true);
+
+      const singleButtonWrapper = document.getElementById('singleButtonWrapper');
+      singleButtonWrapper.appendChild(copiedButton);
+
+      // buzzプラグインが使える場合
+      const voicePath: string = `./voice/${theID}`;
+
+      // eslint-disable-next-line new-cap
+      const voice = new buzz.sound(voicePath, {
+        formats: ['mp3'],
+        preload: true,
+      });
+      copiedButton.addEventListener('click', (e) => {
+        voice.play();
+      });
+    }
+  }
+
 });
