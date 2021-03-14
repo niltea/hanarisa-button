@@ -179,6 +179,31 @@ h1 {
 	}
 }
 
+.ad_wrapper {
+	margin-top: 50px;
+	h2 {
+		text-align: center;
+	}
+	.ad-item {
+		a {
+			display: flex;
+			width: 500px;
+			margin: 15px auto 0;
+		}
+		img {
+			display: inline-block;
+		}
+		span {
+			display: inline-block;
+			font-size: 13px;
+			margin-left: 15px;
+			line-height: 40px;
+			vertical-align: middle;
+			width: 285px;
+		}
+	}
+}
+
 @media screen and (min-width: 1300px) {
 	.multiButtonWrapper .button-play {
 		width: 32%;
